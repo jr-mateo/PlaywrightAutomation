@@ -29,8 +29,7 @@ const textCheck= await framePage.locator(".text h2").textContent();
 console.log(textCheck.split(" ")[1]);
 const textCheck2 = await framePage.locator("div h1 ").textContent();
 console.log(textCheck2);
-console.log(textCheck2);
-console.log(textCheck);
+
 
 
 
