@@ -50,7 +50,7 @@ test('Registration Page', async ({browser}) =>
 
 
 
-test.only('LogIn Page', async ({browser}) =>
+test('LogIn Page', async ({browser}) =>
 {
       //async use to run the test synchronize and can use 'await' function 
    //PW code
