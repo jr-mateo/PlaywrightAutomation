@@ -52,6 +52,7 @@ test('UI TEST', async ({page}) =>
         //RADIO BUTTON
         await page.locator(".radiotextsty").last().click();
         await page.locator("#okayBtn").click();
+        
         //ASSERTION
         console.log (await page.locator(".radiotextsty").last().isChecked());
         await expect(page.locator(".radiotextsty").last()).toBeChecked();
