@@ -31,10 +31,29 @@ const textCheck2 = await framePage.locator("div h1 ").textContent();
 console.log(textCheck2);
 
 
+});
+
+
+test.only("Screenshot and Visual Comparison " ,async({page})=>
+{
+
+    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    expect(await page.locator("#displayed-text")).toBeVisible();
+    await page.locator('#displayed-text').screenshot({path: 'partialscreenshot.png'});
+    await page.locator("#hide-textbox").click();
+    await page.screenshot({path: 'screenshot.png'});
+    expect(await page.locator("#displayed-text")).toBeHidden();
 
 
 
+});
 
+test('Visual Comparison',async({page})=>
+{
+
+    await page.goto('https://www.google.com');
+    expect  (await page.screenshot()).toMatchSnapshot('landingpage.png');
+    
 
 
 });

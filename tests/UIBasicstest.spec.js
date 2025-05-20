@@ -4,7 +4,7 @@ const { constants } = require('http2');
 const { text } = require('stream/consumers');
 
 
-test('Browser Context  TEST', async ({browser}) =>
+test.only('Browser Context  TEST', async ({browser}) =>
 {
    //async use to run the test synchronize and can use 'await' function 
 //PW code
@@ -12,10 +12,13 @@ test('Browser Context  TEST', async ({browser}) =>
     
     const context = await browser.newContext();
     const page = await context.newPage();
-    const  userName = page.locator('#username');
+    page.route('**/*.css', route=> route.abort());//Block CSS to load the site faster  usually use for functional testing
+    const  userName = page.locator('#username'); 
     const passWord = page.locator("[type='password']");
     const signIn = page.locator('#signInBtn');
     const cardTitles = page.locator (".card-body a");
+    page.on('request', request=> console.log(request.url())); //to get all the request
+    page.on('response', response=> console.log(response.url(), response.status())); //to get all the response
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
     console.log(await page.title)
     //css 
