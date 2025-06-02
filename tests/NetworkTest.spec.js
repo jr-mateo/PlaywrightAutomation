@@ -26,8 +26,7 @@ test.beforeAll(async () =>
 test(' Place an Order', async ({page}) =>
 {
     //async use to run the test synchronize and can use 'await' function 
-    //PW code
-    //always add await 
+    
     //by pass the login page using API call
       
 
