@@ -41,7 +41,7 @@ test('Security Test Request Interecpt', async ({ page }) => {
     await page.waitForLoadState('networkidle');
 
     await page.locator("button[routerlink*='/dashboard/myorders']").click();
-    await page.pause();
+    //await page.pause();
 
 
     //intercept request calll
@@ -51,7 +51,7 @@ test('Security Test Request Interecpt', async ({ page }) => {
     await page.locator("button:has-text('View')").first().click();
     
     await expect(page.locator("p").last()).toHaveText("You are not authorize to view this order");
-    await page.pause();
+    //await page.pause();
 
 
 });

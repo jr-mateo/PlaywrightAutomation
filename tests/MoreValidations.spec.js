@@ -34,7 +34,7 @@ console.log(textCheck2);
 });
 
 
-test.only("Screenshot and Visual Comparison " ,async({page})=>
+test("Screenshot and Visual Comparison " ,async({page})=>
 {
 
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");

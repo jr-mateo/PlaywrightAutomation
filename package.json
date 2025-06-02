@@ -2,7 +2,10 @@
   "name": "playwright-automation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts":  {},
+  "scripts": {
+    "webTests": " npx playwright test tests/MoreValidations ",
+    "networkTests": " npx playwright test tests/NetworkTest.spec.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,5 +13,8 @@
   "devDependencies": {
     "@playwright/test": "^1.51.0",
     "@types/node": "^22.13.10"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
   }
 }
